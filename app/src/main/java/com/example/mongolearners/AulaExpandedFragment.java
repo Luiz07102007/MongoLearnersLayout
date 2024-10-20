@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -68,6 +70,7 @@ public class AulaExpandedFragment extends Fragment {
                             final HashMap<String, Object> salvarMap = new HashMap<>();
                             salvarMap.put("aulasMongo",aulasMongo);
                             db.child("Users").child(auth.getUid()).updateChildren(salvarMap);
+                            loadFragment(new AulasFragment());
                         }
                     }
                 });
@@ -78,5 +81,13 @@ public class AulaExpandedFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void loadFragment(Fragment fragment){
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }
