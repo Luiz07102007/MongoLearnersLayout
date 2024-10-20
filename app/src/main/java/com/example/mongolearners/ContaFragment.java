@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -61,13 +63,13 @@ public class ContaFragment extends Fragment {
         sair = v.findViewById(R.id.sair);
         textoFormatado = v.findViewById(R.id.textView8);
 
-sair.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        auth.signOut();
-        startActivity(new Intent(getContext(), LoginTela.class));
-    }
-});
+        sair.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    auth.signOut();
+                    startActivity(new Intent(getContext(), LoginTela.class));
+                }
+        });
 
 
         db.child("Users").child(auth.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -103,8 +105,8 @@ sair.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (!nome.isEnabled()){
                     nome.setEnabled(true);
-                    email.setEnabled(true);
-                    senha.setEnabled(true);
+                    email.setEnabled(false);
+                    senha.setEnabled(false);
                     salvar.setEnabled(true);
                     salvar.setBackgroundColor(rgb(1, 154, 70));
 
@@ -179,6 +181,21 @@ sair.setOnClickListener(new View.OnClickListener() {
                 final HashMap<String, Object> salvarMap = new HashMap<>();
                 salvarMap.put(campo, editText.getText().toString());
                 auth.getCurrentUser().updatePassword(editText.getText().toString());
+
+                db.child("Users").child(auth.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            UserModel query;
+                            query = task.getResult().getValue(UserModel.class);
+
+                            AuthCredential credential = EmailAuthProvider.getCredential(query.getEmail(),query.getSenha());
+                            auth.getCurrentUser().updatePassword(editText.getText().toString());
+                        }
+                    }
+                });
+
+
                 db.child("Users").child(auth.getUid()).updateChildren(salvarMap);
                 return campo;
             }else {

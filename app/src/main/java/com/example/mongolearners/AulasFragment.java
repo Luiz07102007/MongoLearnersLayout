@@ -77,6 +77,7 @@ public class AulasFragment extends Fragment implements AulasInterface {
     public void onItemClick(int position) {
         Bundle b = new Bundle();
         b.putString("aula",aulasModelList.get(position).getNome().toString());
-       // loadFragment(new AulaExpandedFragment(), b);
+        b.putString("conteudo",aulasModelList.get(position).getConteudo().toString());
+        loadFragment(new AulaExpandedFragment(), b);
     }
 }

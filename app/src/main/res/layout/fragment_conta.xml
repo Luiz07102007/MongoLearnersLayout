@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins"
-                android:text="Hello, User!"
+                android:text="Hello, !"
                 android:textColor="#d2d2d2"
                 android:textSize="20sp" />
 
@@ -94,7 +94,7 @@
                 android:ems="10"
                 android:enabled="false"
                 android:fontFamily="@font/poppins"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:textColor="#0f0f0f" />
 
             <LinearLayout
@@ -136,7 +136,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#db0909"
-                android:enabled="false"
                 android:fontFamily="@font/poppins"
                 android:text="Sair"
                 android:layout_marginTop="10dp"

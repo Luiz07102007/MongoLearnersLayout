@@ -89,7 +89,7 @@ public class CadastroTela extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
 
-                            UserModel userModel = new UserModel(nome, email, senha);
+                            UserModel userModel = new UserModel(nome, email, senha, 1, 1);
                             String id = task.getResult().getUser().getUid();
                             database.getReference().child("Users").child(id).setValue(userModel);
 
