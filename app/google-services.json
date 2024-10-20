@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "992742178092",
+    "firebase_url": "https://learnersseries-b537e-default-rtdb.firebaseio.com",
+    "project_id": "learnersseries-b537e",
+    "storage_bucket": "learnersseries-b537e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992742178092:android:b18e70df446877a4514089",
+        "android_client_info": {
+          "package_name": "com.example.mongolearners"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ1YaZvpYorzGZHV0qsjwv6c17IaPVeWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

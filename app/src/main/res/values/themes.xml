@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.MongoLearners" parent="Base.Theme.MongoLearners" />
+
 </resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InicialFragment"
+    android:background="#001E2B">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <FrameLayout
+                android:layout_width="315dp"
+                android:layout_height="191dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/caixa_home"
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#FFFFFF"
+                    android:text="@string/caixa_inicio"
+                    android:textSize="20sp"
+                    />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="315dp"
+                android:layout_height="191dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/caixa_home"
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Track your Progress:\n50% complete"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutAulas"
+                android:layout_width="315dp"
+                android:layout_height="191dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/caixa_home"
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Continue your Studies"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="73dp"
+                    android:drawableEnd="@drawable/baseline_arrow_forward_ios_24"
+                    android:drawableTint="#00C85A"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Go to Mongo DB Classes"
+                    android:textColor="#00C85A"
+                    android:textSize="20sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
